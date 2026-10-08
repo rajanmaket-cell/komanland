@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang='fa'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>koman land</title>
+    <link rel='stylesheet' href='stayle.css'>
+</head>
+<body>
+    <header>
+<a href="index.html">خانه</a>
+</header>
+<h1>ازمون میالندی</h1>
+    <h1 id="question"></h1>
+
+    <input id="answer" type="text" placeholder="جواب را بنویسید">
+
+    <button onclick="nextQuestion()">ثبت جواب</button>
+
+    <p id="result"></p>
+
+<script>
+let questions = [
+" میا چه ورزشی رو بیشتر دوست داره",
+"میا عاشق چه کارتونی بود در بچگی", 
+   "میا چه غذایی را بیشتر دوست داره",
+"شخصیت میا چگونه است",
+"میا چه کاری روزمره رو اگه بتونه هیچوقت انجام نمیده"
+
+];
+
+let answers = [
+    "بسکتبال",
+    "پفپفی ها",
+    "پیتزا",
+    "درونگرا",
+    "تا کردن لباس"
+   
+];
+
+let number = 0;
+let score = 0;
+
+document.getElementById("question").innerHTML = questions[number];
+
+
+function nextQuestion() {
+
+    let userAnswer = document.getElementById("answer").value;
+
+    if (userAnswer == answers[number]) {
+        score++;
+    }
+
+    number++;
+
+    document.getElementById("answer").value = "";
+
+    if (number <5) {
+
+        document.getElementById("question").innerHTML =
+        questions[number];
+
+    } else {
+
+        document.getElementById("question").innerHTML =
+        "آزمون تمام شد!";
+
+        document.getElementById("result").innerHTML =
+        "امتیاز شما: " + score + "از 5";
+
+}
+}
+</script>
+<footer>
+<p>آماده‌ای محبوب‌ترین رو انتخاب کنی؟
+</p>
+<p>
+رأی بده • رقابت کن • نتیجه رو ببین</p>
+<p>قوانین:هرکابر میتوان در آزمون شرکت کند.نتایج آزمون جنبه سرگرمی دارد ونشان دهنده اختلاف انداختن بین طرفداران نیست</p>
+سه نفر، یک رقابت، یک برنده
+<p>2026 چالش محبوبیت_ساخته شده برای سرگرمی و رسیدن به دست کومان.</p>
+طراح سایت یک کوماندو ویک ایمان آبادی هستش
+</footer>
+<script>
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", function () {
+
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        themeBtn.textContent = "☀️";
+    } else {
+        themeBtn.textContent = "🌙";
+    }
+
+});
+</script>
+</body>
+</html>

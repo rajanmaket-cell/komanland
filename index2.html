@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang='fa'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>koman land</title>
+    <link rel='stylesheet' href='stayle.css'>
+</head>
+<body>
+    <header>
+                <a href="index.html">خانه</a>
+                </header>
+                <h1>ازمون کوروش توپیا</h1>
+    <h1 id="question"></h1>
+
+    <input id="answer" type="text" placeholder="جواب را بنویسید">
+
+    <button onclick="nextQuestion()">ثبت جواب</button>
+
+    <p id="result"></p>
+
+
+<script>
+
+let questions = [
+    "کوروش در چه گروه های موسیقی حضور داشته",
+"سلبریتی مورد علاقه کوروش کیه", 
+    "واکنش کوروش وقتی در یک چالش میبازه",
+"کوروش چه کاری روزمره رو اگه بتونه هیچوقت انجام نمیده"
+];
+
+let answers = [
+    "دنگ شو",
+    "گوهرخیراندیش",
+    "ایمان جر زنی کرده",
+    "ظرف شستن ",
+];
+
+let number = 0;
+let score = 0;
+
+document.getElementById("question").innerHTML = questions[number];
+
+
+function nextQuestion() {
+
+    let userAnswer = document.getElementById("answer").value;
+
+    if (userAnswer == answers[number]) {
+        score++;
+    }
+
+    number++;
+
+    document.getElementById("answer").value = "";
+
+    if (number < 4) {
+
+        document.getElementById("question").innerHTML =
+        questions[number];
+
+    } else {
+
+        document.getElementById("question").innerHTML =
+        "آزمون تمام شد!";
+
+        document.getElementById("result").innerHTML =
+        "امتیاز شما: " + score + " از 4";
+
+}
+}
+</script>
+<footer>
+<p>آماده‌ای محبوب‌ترین رو انتخاب کنی؟
+</p>
+<p>
+رأی بده • رقابت کن • نتیجه رو ببین</p>
+<p>قوانین:هرکابر میتوان در آزمون شرکت کند.نتایج آزمون جنبه سرگرمی دارد ونشان دهنده اختلاف انداختن بین طرفداران نیست</p>
+سه نفر، یک رقابت، یک برنده
+<p>2026 چالش محبوبیت_ساخته شده برای سرگرمی و رسیدن به دست کومان.</p>
+طراح سایت یک کوماندو ویک ایمان آبادی هستش
+</footer>
+</body>
+</html>
