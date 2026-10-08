@@ -79,3 +79,29 @@ footer{
 .theme-btn:hover {
     transform: scale(1.08);
 }
+/* mobile */
+@media (max-width: 600px) {
+  header{
+    width:100%;
+    padding:15px 10px
+    box-sizeing:border-box;
+}
+header nav{
+  display:flex;
+  flex-warp:warp;
+  justify-conent:center;
+  gap:10px;
+}
+  header nav a{
+    font-size:14px;
+  }
+  footer{
+    width:100%;
+    padding:20px 10px;
+    box-sizing:border-box;
+    text-align:center;
+  }
+  footer * {
+    max-width:100%;
+  }
+}
