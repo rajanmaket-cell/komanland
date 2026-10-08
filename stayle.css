@@ -102,6 +102,9 @@ header nav{
     box-sizing:border-box;
     text-align:center;
   }
+  footer{
+    hight:20 px;
+  }
   footer * {
     max-width:100%;
   }
